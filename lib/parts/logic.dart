@@ -28,11 +28,13 @@ Widget button(
           textcontroller.text += '(';
           break;
         case '÷':
-          if (textcontroller.text.isEmpty) {
+          if (textcontroller.text[-1] == '÷')
+            debugPrint('double division');
+          else if (textcontroller.text.isEmpty)
             textcontroller.text += '1';
-          } else {
+          else
             textcontroller.text += '÷';
-          }
+
           break;
         case '+/-':
           textcontroller.text += '(-';
