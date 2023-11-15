@@ -1,4 +1,4 @@
-import 'package:calculator/parts/constants.dart';
+import 'package:calculator/parts/hastory.dart';
 import 'package:calculator/parts/logic.dart';
 import 'package:flutter/material.dart';
 
@@ -15,13 +15,7 @@ class IconButtons extends StatelessWidget {
             onPressed: () {
               showModalBottomSheet(
                 context: context,
-                builder: (BuildContext context) {
-                  return Container(
-                    color: themeColor,
-                    height: 450,
-                    child: Center(),
-                  );
-                },
+                builder: (BuildContext context) => history(),
               );
             },
             icon: const Icon(Icons.access_time),

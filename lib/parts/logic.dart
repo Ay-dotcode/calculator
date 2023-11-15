@@ -4,7 +4,7 @@ import 'package:math_expressions/math_expressions.dart';
 
 TextEditingController textcontroller = TextEditingController();
 TextEditingController anscontroller = TextEditingController();
-List answers = [];
+List questions = [], answers = [];
 
 Widget button(
   String text, [
@@ -40,6 +40,7 @@ Widget button(
           textcontroller.text += '(-';
           break;
         case '=':
+          questions.add(textcontroller.text);
           String eval = solve();
 
           answers.add(eval);
