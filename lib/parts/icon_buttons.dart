@@ -1,3 +1,4 @@
+import 'package:calculator/parts/constants.dart';
 import 'package:calculator/parts/logic.dart';
 import 'package:flutter/material.dart';
 
@@ -11,13 +12,25 @@ class IconButtons extends StatelessWidget {
       child: Row(
         children: [
           IconButton(
-            onPressed: () {
-              
-            },
+            onPressed: () {},
             icon: const Icon(Icons.access_time),
           ),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              showModalBottomSheet(
+                context: context,
+                builder: (BuildContext context) {
+                  return Container(
+                    color: themeColor,
+                    height: 500,
+                    child: ElevatedButton(
+                      child: Text("CLOSE"),
+                      onPressed: () => Navigator.pop(context)
+                    ),
+                  );
+                },
+              );
+            },
             icon: const Icon(Icons.calculate_outlined),
           ),
           const SizedBox(width: 200),
