@@ -28,7 +28,7 @@ Widget button(
           textcontroller.text += '(';
           break;
         case '÷':
-          if (textcontroller.text[-1] == '÷')
+          if (textcontroller.text.endsWith('÷'))
             debugPrint('double division');
           else if (textcontroller.text.isEmpty)
             textcontroller.text += '1';
@@ -66,9 +66,17 @@ String solve() {
   question = question.replaceAll('x', '*');
   question = question.replaceAll('÷', '/');
 
-  Parser p = Parser();
-  Expression exp = p.parse(question);
-  ContextModel cm = ContextModel();
-  String eval = exp.evaluate(EvaluationType.REAL, cm).toStringAsFixed(10);
-  return eval;
+  try {
+    // Parse and evaluate the expression
+    Parser p = Parser();
+    Expression exp = p.parse(question);
+    ContextModel cm = ContextModel();
+    String eval = exp.evaluate(EvaluationType.REAL, cm).toString();
+
+    return eval;
+  } catch (e) {
+    // Handle parsing or evaluation errors
+    debugPrint("Invalid expression");
+    return "";
+  }
 }

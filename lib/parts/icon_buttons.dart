@@ -12,25 +12,22 @@ class IconButtons extends StatelessWidget {
       child: Row(
         children: [
           IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.access_time),
-          ),
-          IconButton(
             onPressed: () {
               showModalBottomSheet(
                 context: context,
                 builder: (BuildContext context) {
                   return Container(
                     color: themeColor,
-                    height: 500,
-                    child: ElevatedButton(
-                      child: Text("CLOSE"),
-                      onPressed: () => Navigator.pop(context)
-                    ),
+                    height: 450,
+                    child: Center(),
                   );
                 },
               );
             },
+            icon: const Icon(Icons.access_time),
+          ),
+          IconButton(
+            onPressed: () {},
             icon: const Icon(Icons.calculate_outlined),
           ),
           const SizedBox(width: 200),

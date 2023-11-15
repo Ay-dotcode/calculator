@@ -17,10 +17,11 @@ class _TextState extends State<TextArea> {
       padding: const EdgeInsets.fromLTRB(0, 10, 10, 0),
       child: Column(
         children: [
+
+          // Question field
           TextField(
             controller: textcontroller,
             enabled: false,
-             maxLength: 15,
             decoration: const InputDecoration(
               border: OutlineInputBorder(
                 borderSide: BorderSide.none,
@@ -32,6 +33,8 @@ class _TextState extends State<TextArea> {
               fontSize: 40,
             ),
           ),
+
+          // Answer field
           TextField(
             controller: anscontroller,
             enabled: false,

@@ -20,7 +20,6 @@ class HomePage extends StatelessWidget {
           Expanded(child: TextArea()),
           IconButtons(),
           Divider(color: Colors.white30, height: 0),
-          SizedBox(height: 25),
           Buttons(),
         ],
       ),
