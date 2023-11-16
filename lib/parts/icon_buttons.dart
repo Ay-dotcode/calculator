@@ -1,4 +1,4 @@
-import 'package:calculator/parts/hastory.dart';
+import 'package:calculator/parts/history.dart';
 import 'package:calculator/parts/logic.dart';
 import 'package:flutter/material.dart';
 
