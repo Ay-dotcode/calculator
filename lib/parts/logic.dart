@@ -72,7 +72,10 @@ String solve() {
     Parser p = Parser();
     Expression exp = p.parse(question);
     ContextModel cm = ContextModel();
-    String eval = exp.evaluate(EvaluationType.REAL, cm).toString();
+    String eval = exp.evaluate(EvaluationType.REAL, cm).toStringAsFixed(10);
+
+    // Remove trailing zeros and unnecessary decimal point
+    eval = eval.contains('.') ? eval.replaceAll(RegExp(r"0*$"), "") : eval;
 
     return eval;
   } catch (e) {
