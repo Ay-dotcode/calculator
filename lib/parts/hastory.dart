@@ -3,6 +3,18 @@ import 'package:calculator/parts/logic.dart';
 import 'package:flutter/material.dart';
 
 Container history() {
+  // Create a ScrollController
+  ScrollController _scrollController = ScrollController();
+
+  WidgetsBinding.instance.addPostFrameCallback((_) {
+    // Set an initial scroll offset to make it scroll down by default
+    _scrollController.animateTo(
+      _scrollController.position.maxScrollExtent,
+      duration: Duration(seconds: 1),
+      curve: Curves.easeInOut,
+    );
+  });
+
   return Container(
     color: themeColor,
     height: 450,
@@ -10,6 +22,7 @@ Container history() {
       children: [
         Expanded(
           child: ListView.builder(
+            controller: _scrollController, // Assign the controller
             itemCount: answers.length,
             itemBuilder: (BuildContext context, int index) {
               return Card(
