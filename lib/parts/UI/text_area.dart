@@ -1,5 +1,5 @@
-import 'package:calculator/parts/constants.dart';
-import 'package:calculator/parts/logic.dart';
+import 'package:calculator/parts/functions%20and%20others/Global%20variables.dart';
+import 'package:calculator/parts/functions%20and%20others/constants.dart';
 import 'package:flutter/material.dart';
 
 class TextArea extends StatefulWidget {
@@ -17,7 +17,6 @@ class _TextState extends State<TextArea> {
       padding: const EdgeInsets.fromLTRB(0, 10, 10, 0),
       child: Column(
         children: [
-
           // Question field
           TextField(
             controller: textcontroller,
@@ -33,7 +32,6 @@ class _TextState extends State<TextArea> {
               fontSize: 40,
             ),
           ),
-
           // Answer field
           TextField(
             controller: anscontroller,

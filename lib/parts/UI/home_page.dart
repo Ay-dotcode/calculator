@@ -1,7 +1,7 @@
-import 'package:calculator/parts/buttons.dart';
-import 'package:calculator/parts/constants.dart';
-import 'package:calculator/parts/icon_buttons.dart';
-import 'package:calculator/parts/text_area.dart';
+import 'package:calculator/parts/UI/buttons.dart';
+import 'package:calculator/parts/functions%20and%20others/constants.dart';
+import 'package:calculator/parts/UI/icon_buttons.dart';
+import 'package:calculator/parts/UI/text_area.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {

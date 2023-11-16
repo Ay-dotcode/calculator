@@ -1,5 +1,6 @@
-import 'package:calculator/parts/history.dart';
-import 'package:calculator/parts/logic.dart';
+import 'package:calculator/parts/functions%20and%20others/Global%20variables.dart';
+import 'package:calculator/parts/functions%20and%20others/constants.dart';
+import 'package:calculator/parts/functions%20and%20others/history.dart';
 import 'package:flutter/material.dart';
 
 class IconButtons extends StatelessWidget {
@@ -11,6 +12,7 @@ class IconButtons extends StatelessWidget {
       padding: const EdgeInsets.all(10),
       child: Row(
         children: [
+          // History Button
           IconButton(
             onPressed: () {
               showModalBottomSheet(
@@ -20,11 +22,13 @@ class IconButtons extends StatelessWidget {
             },
             icon: const Icon(Icons.access_time),
           ),
+          //! To do
           IconButton(
             onPressed: () {},
             icon: const Icon(Icons.calculate_outlined),
           ),
           const SizedBox(width: 200),
+          // Backspace Button
           IconButton(
             onPressed: () {
               if (textcontroller.text.isNotEmpty) {
@@ -33,7 +37,7 @@ class IconButtons extends StatelessWidget {
               }
             },
             icon: const Icon(Icons.backspace_outlined),
-            color: const Color.fromARGB(255, 0, 121, 6),
+            color: backspaceColor,
             iconSize: 20,
           ),
         ],

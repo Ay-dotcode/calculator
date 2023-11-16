@@ -1,5 +1,5 @@
-import 'package:calculator/parts/constants.dart';
-import 'package:calculator/parts/logic.dart';
+import 'package:calculator/parts/functions%20and%20others/constants.dart';
+import 'package:calculator/parts/functions%20and%20others/button%20logic.dart';
 import 'package:flutter/material.dart';
 
 class Buttons extends StatelessWidget {
