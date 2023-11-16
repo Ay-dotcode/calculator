@@ -24,7 +24,10 @@ Widget button(
           textcontroller.clear();
           anscontroller.clear();
           break;
-        case '()':
+        case '(':
+          textcontroller.text += '(';
+          break;
+        case ')':
           textcontroller.text += '(';
           break;
         case '÷':

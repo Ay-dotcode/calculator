@@ -17,8 +17,8 @@ class Buttons extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               button('C', Colors.red),
-              button('()', specialColor, 30),
-              button('%', specialColor, 30),
+              button('(', specialColor, 30),
+              button(')', specialColor, 30),
               button('÷', specialColor, 45),
             ],
           ),
