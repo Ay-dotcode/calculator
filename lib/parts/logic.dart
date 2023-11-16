@@ -75,12 +75,13 @@ String solve() {
     String eval = exp.evaluate(EvaluationType.REAL, cm).toStringAsFixed(10);
 
     // Remove trailing zeros and unnecessary decimal point
-    eval = eval.contains('.') ? eval.replaceAll(RegExp(r"0*$"), "") : eval;
+    //eval = eval.contains('.') ? eval.replaceAll(RegExp(r"0*$"), "") : eval;
+    eval = eval.replaceAll(RegExp(r"0*$"), "").replaceAll(RegExp(r"\.$"), "");
 
     return eval;
   } catch (e) {
     // Handle parsing or evaluation errors
-    debugPrint("Invalid expression");
+    debugPrint("Error: $e");
     return "";
   }
 }
