@@ -22,7 +22,7 @@ class Buttons extends StatelessWidget {
               button('÷', specialColor, 45),
             ],
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -32,7 +32,7 @@ class Buttons extends StatelessWidget {
               button('x', specialColor, 40),
             ],
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -42,7 +42,7 @@ class Buttons extends StatelessWidget {
               button('-', specialColor, 50),
             ],
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -52,7 +52,7 @@ class Buttons extends StatelessWidget {
               button('+', specialColor, 45),
             ],
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [

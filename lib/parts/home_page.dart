@@ -15,7 +15,7 @@ class HomePage extends StatelessWidget {
         centerTitle: true,
         backgroundColor: themeColor,
       ),
-      body: Column(
+      body: const Column(
         children: [
           Expanded(child: TextArea()),
           IconButtons(),

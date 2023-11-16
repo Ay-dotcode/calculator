@@ -10,7 +10,7 @@ Container history() {
     // Set an initial scroll offset to make it scroll down by default
     _scrollController.animateTo(
       _scrollController.position.maxScrollExtent,
-      duration: Duration(seconds: 1),
+      duration: const Duration(seconds: 1),
       curve: Curves.easeInOut,
     );
   });
@@ -36,12 +36,12 @@ Container history() {
                     // Answer
                     title: Text(
                       answers[index],
-                      style: TextStyle(fontSize: 30),
+                      style: const TextStyle(fontSize: 30),
                     ),
                     // Question
                     subtitle: Text(
                       questions[index],
-                      style: TextStyle(fontSize: 15),
+                      style: const TextStyle(fontSize: 15),
                     ),
                     onTap: () {
                       anscontroller.clear();
