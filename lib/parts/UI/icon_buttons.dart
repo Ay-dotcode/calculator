@@ -17,7 +17,7 @@ class IconButtons extends StatelessWidget {
             onPressed: () {
               showModalBottomSheet(
                 context: context,
-                builder: (BuildContext context) => history(),
+                builder: (BuildContext context) => const HistoryContainer(),
               );
             },
             icon: const Icon(Icons.access_time),

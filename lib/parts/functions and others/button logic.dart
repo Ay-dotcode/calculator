@@ -1,6 +1,7 @@
 import 'package:calculator/parts/functions%20and%20others/Global%20variables.dart';
 import 'package:calculator/parts/functions%20and%20others/constants.dart';
 import 'package:calculator/parts/functions%20and%20others/solve.dart';
+import 'package:calculator/utils/data_saver.dart';
 import 'package:flutter/material.dart';
 
 Widget button(
@@ -15,7 +16,7 @@ Widget button(
       fixedSize: const Size.fromRadius(38),
       shape: const CircleBorder(),
     ),
-    onPressed: () {
+    onPressed: () async {
       switch (text) {
         case 'C':
           textcontroller.clear();
@@ -40,13 +41,7 @@ Widget button(
           textcontroller.text += '(-';
           break;
         case '=':
-          questions.add(textcontroller.text);
-          String eval = solve();
-
-          answers.add(eval);
-          textcontroller.clear();
-          anscontroller.text = eval;
-
+          await onEqualButtonPressed();
           break;
         default:
           textcontroller.text += text;
@@ -60,4 +55,16 @@ Widget button(
       ),
     ),
   );
+}
+
+Future<void> onEqualButtonPressed() async {
+  questions.add(textcontroller.text);
+  String eval = solve();
+
+  answers.add(eval);
+  textcontroller.clear();
+  anscontroller.text = eval;
+
+  await DataSaver().setData(data: answers, key: 'answers');
+  await DataSaver().setData(data: questions, key: 'questions');
 }
