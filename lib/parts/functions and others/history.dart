@@ -1,38 +1,18 @@
 import 'package:calculator/parts/functions%20and%20others/Global%20variables.dart';
 import 'package:calculator/parts/functions%20and%20others/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class HistoryContainer extends StatefulWidget {
   const HistoryContainer({super.key});
+  static bool historyLoaded = false;
 
   @override
   State<HistoryContainer> createState() => _HistoryContainerState();
 }
 
 class _HistoryContainerState extends State<HistoryContainer> {
-  bool historyLoaded = false;
-
-  Future<void> getHistory() async {
-    historyLoaded = false;
-    // Obtain shared preferences.
-    final prefs = await SharedPreferences.getInstance();
-
-    answers = await prefs.getStringList('answers') ?? [];
-    questions = await prefs.getStringList('questions') ?? [];
-  }
-
   @override
   void initState() {
-    setState(() {
-      historyLoaded = false;
-    });
-    getHistory();
-
-    setState(() {
-      historyLoaded = true;
-    });
-
     super.initState();
   }
 
@@ -50,53 +30,46 @@ class _HistoryContainerState extends State<HistoryContainer> {
       );
     });
 
-    return Visibility(
-      visible: historyLoaded,
-      replacement: Container(
-        height: 450,
-        child: const CircularProgressIndicator(),
-      ),
-      child: Container(
-        color: themeColor,
-        height: 450,
-        child: Column(
-          children: [
-            Expanded(
-              child: ListView.builder(
-                controller: _scrollController, // Assign the controller
-                itemCount: answers.length,
-                itemBuilder: (BuildContext context, int index) {
-                  return Card(
-                    color: themeColor,
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 10,
-                        vertical: 0,
-                      ),
-                      child: ListTile(
-                        // Answer
-                        title: Text(
-                          answers[index],
-                          style: const TextStyle(fontSize: 30),
-                        ),
-                        // Question
-                        subtitle: Text(
-                          questions[index],
-                          style: const TextStyle(fontSize: 15),
-                        ),
-                        onTap: () {
-                          anscontroller.clear();
-                          textcontroller.text = answers[index];
-                          Navigator.pop(context);
-                        },
-                      ),
+    return Container(
+      color: themeColor,
+      height: 450,
+      child: Column(
+        children: [
+          Expanded(
+            child: ListView.builder(
+              controller: _scrollController, // Assign the controller
+              itemCount: answers.length,
+              itemBuilder: (BuildContext context, int index) {
+                return Card(
+                  color: themeColor,
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 10,
+                      vertical: 0,
                     ),
-                  );
-                },
-              ),
+                    child: ListTile(
+                      // Answer
+                      title: Text(
+                        answers[index],
+                        style: const TextStyle(fontSize: 30),
+                      ),
+                      // Question
+                      subtitle: Text(
+                        questions[index],
+                        style: const TextStyle(fontSize: 15),
+                      ),
+                      onTap: () {
+                        anscontroller.clear();
+                        textcontroller.text = answers[index];
+                        Navigator.pop(context);
+                      },
+                    ),
+                  ),
+                );
+              },
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

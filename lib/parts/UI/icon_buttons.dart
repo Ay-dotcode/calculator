@@ -14,11 +14,15 @@ class IconButtons extends StatelessWidget {
         children: [
           // History Button
           IconButton(
-            onPressed: () {
-              showModalBottomSheet(
+            onPressed: () async {
+              await showModalBottomSheet(
                 context: context,
-                builder: (BuildContext context) => const HistoryContainer(),
+                builder: (BuildContext context) {
+                  // Navigator.of(context).pop();
+                  return const HistoryContainer();
+                },
               );
+              debugPrint("Opened");
             },
             icon: const Icon(Icons.access_time),
           ),
