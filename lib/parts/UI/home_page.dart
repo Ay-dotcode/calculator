@@ -4,7 +4,6 @@ import 'package:calculator/parts/UI/text_area.dart';
 import 'package:calculator/parts/functions%20and%20others/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
 import '../functions and others/Global variables.dart';
 import '../functions and others/history.dart';
 

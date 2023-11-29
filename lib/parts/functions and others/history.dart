@@ -29,7 +29,6 @@ class _HistoryContainerState extends State<HistoryContainer> {
         curve: Curves.easeInOut,
       );
     });
-
     return Container(
       color: themeColor,
       height: 450,

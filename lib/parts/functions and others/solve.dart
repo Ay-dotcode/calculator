@@ -1,6 +1,21 @@
 import 'package:calculator/parts/functions%20and%20others/Global%20variables.dart';
+import 'package:calculator/utils/data_saver.dart';
 import 'package:flutter/material.dart';
 import 'package:math_expressions/math_expressions.dart';
+
+Future<void> onEqualButtonPressed() async {
+  String eval = solve();
+
+  if (eval != "") {
+    questions.add(textcontroller.text);
+    answers.add(eval);
+  }
+  textcontroller.clear();
+  anscontroller.text = eval;
+
+  await DataSaver().setData(data: answers, key: 'answers');
+  await DataSaver().setData(data: questions, key: 'questions');
+}
 
 String solve() {
   String question = textcontroller.text;
