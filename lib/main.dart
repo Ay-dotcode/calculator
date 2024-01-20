@@ -1,5 +1,5 @@
-import 'package:calculator/parts/functions%20and%20others/constants.dart';
 import 'package:calculator/parts/UI/home_page.dart';
+import 'package:calculator/parts/functions%20and%20others/constants.dart';
 import 'package:flutter/material.dart';
 
 void main() {
