@@ -15,6 +15,7 @@ class IconButtons extends StatelessWidget {
           // History Button
           IconButton(
             onPressed: () async {
+              debugPrint("Opening history");
               await showModalBottomSheet(
                 context: context,
                 builder: (BuildContext context) {
@@ -22,7 +23,7 @@ class IconButtons extends StatelessWidget {
                   return const HistoryContainer();
                 },
               );
-              debugPrint("Opened");
+              debugPrint("Closed History");
             },
             icon: const Icon(Icons.access_time),
           ),

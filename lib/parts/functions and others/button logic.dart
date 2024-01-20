@@ -1,7 +1,6 @@
 import 'package:calculator/parts/functions%20and%20others/Global%20variables.dart';
 import 'package:calculator/parts/functions%20and%20others/constants.dart';
 import 'package:calculator/parts/functions%20and%20others/solve.dart';
-import 'package:calculator/utils/data_saver.dart';
 import 'package:flutter/material.dart';
 
 Widget button(
@@ -26,7 +25,7 @@ Widget button(
           textcontroller.text += '(';
           break;
         case ')':
-          textcontroller.text += '(';
+          textcontroller.text += ')';
           break;
         case '÷':
           if (textcontroller.text.endsWith('÷'))
@@ -57,14 +56,3 @@ Widget button(
   );
 }
 
-Future<void> onEqualButtonPressed() async {
-  questions.add(textcontroller.text);
-  String eval = solve();
-
-  answers.add(eval);
-  textcontroller.clear();
-  anscontroller.text = eval;
-
-  await DataSaver().setData(data: answers, key: 'answers');
-  await DataSaver().setData(data: questions, key: 'questions');
-}
