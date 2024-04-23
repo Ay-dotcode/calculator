@@ -45,6 +45,10 @@ Widget button(
         default:
           textcontroller.text += text;
       }
+      if (['+', '-', '÷', 'x']
+          .any((char) => textcontroller.text.contains(char))) {
+        anscontroller.text = solve();
+      }
     },
     child: Text(
       text,
@@ -55,4 +59,3 @@ Widget button(
     ),
   );
 }
-

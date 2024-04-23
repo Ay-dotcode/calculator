@@ -10,8 +10,8 @@ Future<void> onEqualButtonPressed() async {
     questions.add(textcontroller.text);
     answers.add(eval);
   }
-  textcontroller.clear();
-  anscontroller.text = eval;
+  anscontroller.clear();
+  textcontroller.text = eval;
 
   await DataSaver().setData(data: answers, key: 'answers');
   await DataSaver().setData(data: questions, key: 'questions');
